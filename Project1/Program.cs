@@ -19,7 +19,7 @@ string [] FillStringArray(string[] array)
 }
 
 
-int CountElementsLenghtLess3 (string[] array)
+int CountElementsLengthLess3 (string[] array)
 {
     int count = 0;
     for (int i = 0; i < array.Length; i++)
@@ -29,8 +29,9 @@ int CountElementsLenghtLess3 (string[] array)
     return count;
 }
 
-string[] MainTaskFillOutputArray (string[] arrayInput, string[] arrayOutput)
+string[] MainTaskFillOutputArray (string[] arrayInput, int count)
 {
+    string[] arrayOutput = new string[count];
     int k = 0;
     for (int i = 0; i < arrayInput.Length; i ++)
     {
@@ -53,3 +54,25 @@ void PrintArray(string[] array)
     }
     Console.WriteLine();
 }
+
+int inputArraySize = new Random().Next(1, 10); // принятое допущение 3
+Console.WriteLine("You need to fill in array that consist of " + inputArraySize + " elements");
+
+string[] userInputArray = CreateStringArray(inputArraySize);
+
+userInputArray = FillStringArray(userInputArray);
+
+int countElementsLess3 = CountElementsLengthLess3(userInputArray);
+
+string[] userArrayOutput = MainTaskFillOutputArray(userInputArray, countElementsLess3); 
+
+PrintArray(userInputArray);
+
+PrintArray(userArrayOutput); 
+
+
+
+
+
+
+
