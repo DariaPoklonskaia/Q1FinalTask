@@ -3,30 +3,20 @@
     string[] newArray = new string[size];
     for (int i = 0; i < size; i++)
     {
-        newArray[i] = string.Empty;
+        Console.Write($"Input {i+1} element: ");
+        newArray[i] = Console.ReadLine();
     }
     return newArray;
 }
 
-string [] FillStringArray(string[] array)
-{
-    for (int i = 0; i < array.Length; i++)
-    {
-        Console.Write($"Input {i+1} element: ");
-        array[i] = Console.ReadLine();
-    }
-    return array;
-}
-
-
 int CountElementsLengthLess3 (string[] array)
 {
-    int count = 0;
+    int elementsCounter = 0;
     for (int i = 0; i < array.Length; i++)
     {
-        if (array[i].Length <= 3) count++;
+        if (array[i].Length <= 3) elementsCounter++;
     }
-    return count;
+    return elementsCounter;
 }
 
 string[] MainTaskFillOutputArray (string[] arrayInput, int count)
@@ -45,7 +35,6 @@ string[] MainTaskFillOutputArray (string[] arrayInput, int count)
     return arrayOutput;
 }
 
-
 void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
@@ -55,20 +44,33 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
-int inputArraySize = new Random().Next(1, 10); // принятое допущение 3
+int randomMin = 0;
+int randomMax = 9;
+int inputArraySize = new Random().Next(randomMin, randomMax + 1); // принятое допущение 3
 Console.WriteLine("You need to fill in array that consist of " + inputArraySize + " elements");
 
 string[] userInputArray = CreateStringArray(inputArraySize);
 
-userInputArray = FillStringArray(userInputArray);
-
 int countElementsLess3 = CountElementsLengthLess3(userInputArray);
 
-string[] userArrayOutput = MainTaskFillOutputArray(userInputArray, countElementsLess3); 
+if (countElementsLess3 > 0)
+    {
+    string[] userOutputArray = MainTaskFillOutputArray(userInputArray, countElementsLess3);
+    PrintArray(userInputArray);
+    PrintArray(userOutputArray);
+    }
+else 
+{
+    PrintArray(userInputArray);
+    Console.WriteLine("there are no elements for output array that meet conditions");
+}
 
-PrintArray(userInputArray);
 
-PrintArray(userArrayOutput); 
+ 
+
+
+
+ 
 
 
 
