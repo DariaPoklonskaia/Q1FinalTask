@@ -39,12 +39,12 @@ void PrintArray(string[] array)
 {
     for (int i = 0; i < array.Length; i++)
     {
-        Console.Write(array[i] + " ,");
+        Console.Write(array[i] + ",");
     }
     Console.WriteLine();
 }
 
-int randomMin = 0;
+int randomMin = 1;
 int randomMax = 9;
 int inputArraySize = new Random().Next(randomMin, randomMax + 1); // принятое допущение 3
 Console.WriteLine("You need to fill in array that consist of " + inputArraySize + " elements");
