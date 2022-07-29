@@ -4,7 +4,7 @@
     for (int i = 0; i < size; i++)
     {
         Console.Write($"Input {i+1} element: ");
-        newArray[i] = Console.ReadLine();
+         newArray[i] = Console.ReadLine(); 
     }
     return newArray;
 }
@@ -44,9 +44,10 @@ void PrintArray(string[] array)
     Console.WriteLine();
 }
 
+
 int randomMin = 1;
 int randomMax = 9;
-int inputArraySize = new Random().Next(randomMin, randomMax + 1); // принятое допущение 3
+int inputArraySize = new Random().Next(randomMin, randomMax + 1); 
 Console.WriteLine("You need to fill in array that consist of " + inputArraySize + " elements");
 
 string[] userInputArray = CreateStringArray(inputArraySize);
